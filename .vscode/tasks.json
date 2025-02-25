@@ -1,0 +1,77 @@
+{
+    "inputs": [
+        {
+            "default": "",
+            "description": "Type the suffix version of packages",
+            "id": "versionSuffix",
+            "type": "promptString"
+        },
+        {
+            "default": "testing",
+            "description": "Select the visual studio solution",
+            "id": "moduleName",
+            "options": [
+                "testing"
+            ],
+            "type": "pickString"
+        }
+    ],
+    "tasks": [
+        {
+            "command": "dotnet build --configuration Release --nologo --verbosity normal '${workspaceFolder}/${input:moduleName}/${input:moduleName}.sln'",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile",
+            "type": "shell"
+        },
+        {
+            "command": "dotnet outdated --fail-on-updates --no-restore --recursive --version-lock minor -u:prompt '${workspaceFolder}/${input:moduleName}'",
+            "dependsOn": "build",
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "label": "outdated",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile",
+            "type": "shell"
+        },
+        {
+            "command": "dotnet pack --configuration Release --include-source --include-symbols --nologo --no-restore --output '${workspaceFolder}/artifacts/packages' --version-suffix '${input:versionSuffix}' --verbosity normal '${workspaceFolder}/${input:moduleName}/${input:moduleName}.sln'",
+            "dependsOn": "test",
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "label": "pack",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile",
+            "type": "shell"
+        },
+        {
+            "command": "dotnet test --collect 'XPlat Code Coverage;Format=opencover' --configuration Release --no-build --nologo --no-restore --results-directory '${workspaceFolder}/artifacts/tests' --verbosity normal '${workspaceFolder}/${input:moduleName}/${input:moduleName}.sln'",
+            "dependsOn": "build",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "label": "test",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile",
+            "type": "shell"
+        }
+    ],
+    "version": "2.0.0"
+}
