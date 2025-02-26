@@ -13,6 +13,7 @@
             "options": [
                 "application",
                 "cache",
+                "data",
                 "exceptions",
                 "testing"
             ],
