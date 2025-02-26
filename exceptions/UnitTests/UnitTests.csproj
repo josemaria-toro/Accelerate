@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AnalysisLevel>5.0</AnalysisLevel>
-        <AssemblyName>Accelerate.Testing.xUnit</AssemblyName>
+        <AssemblyName>Accelerate.Exceptions.UnitTests</AssemblyName>
         <AssemblyOriginatorKeyFile>$(solutiondir)/signature.snk</AssemblyOriginatorKeyFile>
-        <AssemblyTitle>Library to develop tests based on xUnit</AssemblyTitle>
+        <AssemblyTitle>Unit tests for exceptions library</AssemblyTitle>
         <AssemblyVersion>8.0.0</AssemblyVersion>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Authors>Zeta Technologies</Authors>
@@ -13,7 +13,7 @@
         <Configurations>Debug;Release</Configurations>
         <ContentTargetFolders>content</ContentTargetFolders>
         <Copyright>Zeta Technologies © 2025</Copyright>
-        <Description>Library to develop tests based on xUnit</Description>
+        <Description>Unit tests for exceptions library</Description>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <FileVersion>8.0.0</FileVersion>
@@ -26,19 +26,19 @@
         <IncludeSource>true</IncludeSource>
         <IncludeSymbols>true</IncludeSymbols>
         <InformationalVersion>8.0.0</InformationalVersion>
-        <IsPackable>true</IsPackable>
-        <IsTestProject>false</IsTestProject>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
         <IsTool>false</IsTool>
         <NeutralLanguage>en-US</NeutralLanguage>
         <Nullable>disable</Nullable>
         <OutputType>library</OutputType>
-        <PackageDescription>Library to develop tests based on xUnit</PackageDescription>
+        <PackageDescription>Unit tests for exceptions library</PackageDescription>
         <PackageIcon>zetatech.png</PackageIcon>
-        <PackageId>Accelerate.Testing.xUnit</PackageId>
+        <PackageId>Accelerate.Exceptions.UnitTests</PackageId>
         <PackageLicenseFile>license</PackageLicenseFile>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageTags>Test xUnit Zeta</PackageTags>
+        <PackageTags>Accelerate Exception Tests Unit Zeta</PackageTags>
         <Product>Accelerate</Product>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/josemaria-toro/accelerate.git</RepositoryUrl>
@@ -48,7 +48,7 @@
         <RunCodeAnalysis>false</RunCodeAnalysis>
         <SignAssembly>true</SignAssembly>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+        <TargetFramework>net8.0</TargetFramework>
         <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
         <VersionPrefix>8.0.0</VersionPrefix>
     </PropertyGroup>
@@ -68,9 +68,23 @@
         <None Include="$(solutiondir)/zetatech.png" Pack="true" PackagePath="" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
+        <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="xunit.extensibility.core" Version="2.9.3" />
+        <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Accelerate.Testing.xUnit" Version="1.0.0" />
+        <PackageReference Include="coverlet.collector" Version="6.0.4">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+        <PackageReference Include="Moq" Version="4.20.72" />
+        <PackageReference Include="xunit" Version="2.9.3" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>
