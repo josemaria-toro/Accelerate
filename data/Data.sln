@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstractions", "Abstractions\Abstractions.csproj", "{275FEFF2-E969-413C-9DEF-0ACC28072BB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{A81C2EFC-A989-4A9A-9EB0-D7F28A466A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLServer", "SQLServer\SQLServer.csproj", "{56485C2D-8135-4BED-8B27-5DE9E770AFB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos", "Cosmos\Cosmos.csproj", "{2978A546-CFA5-4655-AF63-0645835FC96C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQL", "MySQL\MySQL.csproj", "{8544D055-8F0D-408B-8E0A-F180891E4FA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLite", "SQLite\SQLite.csproj", "{029083C6-4050-46D1-82DE-1D382747E5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{53EAFCED-4B93-4078-A1B4-1B8F88403E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostgreSQL", "PostgreSQL\PostgreSQL.csproj", "{D3EE685C-BD69-448F-8D7C-C02E7FA7F507}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{275FEFF2-E969-413C-9DEF-0ACC28072BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275FEFF2-E969-413C-9DEF-0ACC28072BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275FEFF2-E969-413C-9DEF-0ACC28072BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275FEFF2-E969-413C-9DEF-0ACC28072BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81C2EFC-A989-4A9A-9EB0-D7F28A466A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81C2EFC-A989-4A9A-9EB0-D7F28A466A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81C2EFC-A989-4A9A-9EB0-D7F28A466A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81C2EFC-A989-4A9A-9EB0-D7F28A466A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56485C2D-8135-4BED-8B27-5DE9E770AFB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56485C2D-8135-4BED-8B27-5DE9E770AFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56485C2D-8135-4BED-8B27-5DE9E770AFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56485C2D-8135-4BED-8B27-5DE9E770AFB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2978A546-CFA5-4655-AF63-0645835FC96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2978A546-CFA5-4655-AF63-0645835FC96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2978A546-CFA5-4655-AF63-0645835FC96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2978A546-CFA5-4655-AF63-0645835FC96C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8544D055-8F0D-408B-8E0A-F180891E4FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8544D055-8F0D-408B-8E0A-F180891E4FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8544D055-8F0D-408B-8E0A-F180891E4FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8544D055-8F0D-408B-8E0A-F180891E4FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029083C6-4050-46D1-82DE-1D382747E5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029083C6-4050-46D1-82DE-1D382747E5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029083C6-4050-46D1-82DE-1D382747E5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029083C6-4050-46D1-82DE-1D382747E5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53EAFCED-4B93-4078-A1B4-1B8F88403E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EAFCED-4B93-4078-A1B4-1B8F88403E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EAFCED-4B93-4078-A1B4-1B8F88403E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EAFCED-4B93-4078-A1B4-1B8F88403E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EE685C-BD69-448F-8D7C-C02E7FA7F507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EE685C-BD69-448F-8D7C-C02E7FA7F507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EE685C-BD69-448F-8D7C-C02E7FA7F507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EE685C-BD69-448F-8D7C-C02E7FA7F507}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24622CA8-B1FE-4FFE-9B1A-1B7D8562BB3F}
+	EndGlobalSection
+EndGlobal
