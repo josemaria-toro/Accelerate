@@ -12,6 +12,7 @@
             "id": "moduleName",
             "options": [
                 "application",
+                "cache",
                 "exceptions",
                 "testing"
             ],
