@@ -11,6 +11,7 @@
             "description": "Select the visual studio solution",
             "id": "moduleName",
             "options": [
+                "exceptions",
                 "testing"
             ],
             "type": "pickString"

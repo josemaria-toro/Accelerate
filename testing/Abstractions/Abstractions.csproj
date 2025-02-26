@@ -41,7 +41,7 @@
         <PackageTags>Abstraction Accelerate Test Zeta</PackageTags>
         <Product>Accelerate</Product>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://dev.azure.com/josemaria-toro/zetatech/_git/accelerate</RepositoryUrl>
+        <RepositoryUrl>https://github.com/josemaria-toro/accelerate.git</RepositoryUrl>
         <RootNamespace>Accelerate</RootNamespace>
         <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
         <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>

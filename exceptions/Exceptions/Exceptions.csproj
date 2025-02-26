@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AnalysisLevel>5.0</AnalysisLevel>
-        <AssemblyName>Accelerate.Testing.xUnit</AssemblyName>
+        <AssemblyName>Accelerate.Exceptions</AssemblyName>
         <AssemblyOriginatorKeyFile>$(solutiondir)/signature.snk</AssemblyOriginatorKeyFile>
-        <AssemblyTitle>Library to develop tests based on xUnit</AssemblyTitle>
+        <AssemblyTitle>Exceptions catalog library</AssemblyTitle>
         <AssemblyVersion>8.0.0</AssemblyVersion>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Authors>Zeta Technologies</Authors>
@@ -13,7 +13,7 @@
         <Configurations>Debug;Release</Configurations>
         <ContentTargetFolders>content</ContentTargetFolders>
         <Copyright>Zeta Technologies © 2025</Copyright>
-        <Description>Library to develop tests based on xUnit</Description>
+        <Description>Exceptions catalog library</Description>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <FileVersion>8.0.0</FileVersion>
@@ -32,13 +32,13 @@
         <NeutralLanguage>en-US</NeutralLanguage>
         <Nullable>disable</Nullable>
         <OutputType>library</OutputType>
-        <PackageDescription>Library to develop tests based on xUnit</PackageDescription>
+        <PackageDescription>Exceptions catalog library</PackageDescription>
         <PackageIcon>zetatech.png</PackageIcon>
-        <PackageId>Accelerate.Testing.xUnit</PackageId>
+        <PackageId>Accelerate.Exceptions</PackageId>
         <PackageLicenseFile>license</PackageLicenseFile>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageTags>Test xUnit Zeta</PackageTags>
+        <PackageTags>Accelerate Exception Zeta</PackageTags>
         <Product>Accelerate</Product>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/josemaria-toro/accelerate.git</RepositoryUrl>
@@ -66,11 +66,5 @@
         <None Include="readme.md" Pack="true" PackagePath="" />
         <None Include="$(solutiondir)/license" Pack="true" PackagePath="" />
         <None Include="$(solutiondir)/zetatech.png" Pack="true" PackagePath="" />
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\Abstractions\Abstractions.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="xunit.extensibility.core" Version="2.9.3" />
     </ItemGroup>
 </Project>
