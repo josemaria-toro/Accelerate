@@ -17,6 +17,7 @@
                 "domain",
                 "exceptions",
                 "logging",
+                "telemetry",
                 "testing"
             ],
             "type": "pickString"
