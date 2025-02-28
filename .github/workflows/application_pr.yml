@@ -1,0 +1,35 @@
+name: application (pr)
+on:
+  pull_request:
+    paths:
+      - application/**
+env:
+  configuration: Release
+  coverageReportsPath: artifacts/coverage
+  dotnetVersion: 8.0.x
+  packagesPath: artifacts/packages
+  projectOrSolutionFile: application/Application.sln
+  verbosityLevel: normal
+  versionSuffix: preview.${{ github.run_attempt }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download source code
+      uses: actions/checkout@v2
+    - name: Setup .NET environment
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: ${{ env.dotnetVersion }}
+    - name: Clean workspace
+      run: dotnet clean ${{ env.projectOrSolutionFile }} --configuration ${{ env.configuration }} --nologo --verbosity ${{ env.verbosityLevel }}
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.projectOrSolutionFile }} --nologo --verbosity ${{ env.verbosityLevel }}
+    - name: Build visual studio solution
+      run: dotnet build ${{ env.projectOrSolutionFile }} --configuration ${{ env.configuration }} --nologo --no-restore --verbosity ${{ env.verbosityLevel }}
+    - name: Run unit tests
+      run: dotnet test ${{ env.projectOrSolutionFile }} --collect "XPlat Code Coverage;Format=opencover" --configuration ${{ env.configuration }} --no-build --nologo --no-restore --results-directory ${{ env.coverageReportsPath }} --verbosity ${{ env.verbosityLevel }}
+    - name: Build nuget packages
+      run: dotnet pack ${{ env.projectOrSolutionFile }} --configuration ${{ env.configuration }} --include-source --include-symbols --nologo --no-restore --output ${{ env.packagesPath }} --version-suffix ${{ env.versionSuffix }} --verbosity ${{ env.verbosityLevel }}
+    - name: Publish nuget packages on feed
+      run: dotnet nuget push ${{ env.packagesPath }}/*.nupkg --api-key ${{ secrets.feedApiKey }} --source ${{ vars.feedUrlOrName }} --skip-duplicate --timeout 300
